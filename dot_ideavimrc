@@ -1,0 +1,132 @@
+set ideajoin
+set ideamarks
+set ideastrictmode
+set ideastatusicon=gray
+set idearefactormode=keep
+
+set which-key
+set number
+set hlsearch
+set incsearch
+set timeoutlen=5000
+set ignorecase
+set visualbell
+
+let mapleader="\"
+
+""""""""""" Leader Commands -----------------------
+
+map <leader><leader> <Action>(RecentFiles)
+map <leader>s <Action>(FileStructurePopup)
+map <leader>b <Action>(Switcher)
+map <leader>f <Action>(GotoFile)
+map <leader>a <Action>(GotoAction)
+map <leader>g <Action>(Generate)
+map <leader>en <Action>(EditSourceInNewWindow)
+map <leader>n <Action>(NextWindow)
+map <leader>q <Action>(CloseContent)
+map <leader>qa <Action>(CloseAllEditors)
+map <leader>c <Action>(CommentByLineComment)
+
+map <leader>t :NERDTreeToggle<cr>
+
+"""""""""""" Space Commands -------------
+map <Space><Space> <Action>(Run)
+map <S-Space> <Action>(Stop)
+map <Space>r <Action>(ChooseRunConfiguration)
+map <Space>d <Action>(Debug)
+
+""""""""""" Comma Commands ------------------
+
+map ,bc <Action>(CloseEditor)
+map ,bC <Action>(CloseAllEditorsButActive)
+
+map ,r <Action>(Refactorings.QuickListPopupAction)
+map ,= <Action>(ReformatCode)
+map ,o <Action>(OptimizeImports)
+map ,v <Action>(VimFindActionIdAction)
+map ,i <Action>(QuickImplementations)
+map ,e <Action>(ShowErrorDescription)
+
+map ,td <Action>(ActivateTODOToolWindow)
+map ,tl <Action>(ActivateLogcatToolWindow)
+map ,tp <Action>(ActivateProblemsViewToolWindow)
+map ,tr <Action>(ActivateRunToolWindow)
+map ,tt <Action>(ActivateTerminalToolWindow)
+
+"map ,sb <Action>(ToggleLineBreakpoint)
+"map ,sn <Action>(StepOver)
+"map ,si <Action>(StepInto)
+"map ,so <Action>(StepOut)
+
+map ,db <Action>(ToggleLineBreakpoint)
+map ,dn <Action>(StepOver)
+map ,di <Action>(StepInto)
+map ,do <Action>(StepOut)
+
+
+""""""""" Control Commands ----------------
+map <C-z> <Action>(ToggleZenMode)
+map <C-\> <Action>(SplitVertically)
+map <C--> <Action>(SplitHorizontally)
+map <C-=> <Action>(UnsplitAll)
+map <C-h> <Action>(PrevSplitter)
+map <C-;> <Action>(NextSplitter)
+"map <C-t> <Action>(ActivateTerminalToolWindow)
+map <C-x> <Action>(HideAllWindows)
+map <C-p> <Action>(JumpToLastWindow)
+
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+"""""""" Tab Commands ------------------
+map <Tab> <Action>(NextTab)
+map <S-Tab> <Action>(PreviousTab)
+map <C-Tab> :tabm +1<CR>
+map <C-S-Tab> :tabm -1<CR>
+
+map Zc <Action>(CollapseAllRegions)
+map Zo <Action>(ExpandAllRegions)
+map zc <Action>(CollapseRegion)
+map zo <Action>(ExpandRegion)
+
+map gi <Action>(GotoImplementation)
+map gd <Action>(GotoDeclaration)
+map gx <Action>(ExpressionTypeInfo)
+map ge <Action>(GotoNextError)
+map gE <Action>(GotoPreviousError)
+map [[ <Action>(MethodUp)
+map ]] <Action>(MethodDown)
+map g, <Action>(JumpToLastChange)
+map g; <Action>(JumpToNextChange)
+
+""" Plugins --------------
+
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+
+""" NERDTree ---------------
+" o/go -> open node / open node but leave cursor in NERDTree
+" t -> open in new tab / open in new tab leaving focus in NERDTree
+" i/s -> open in hor. split / open in ver. split
+" x/X -> close node parent / close all children of node
+" r/R -> refresh directory / root
+" p/P -> jump to node parent / jump to root node
+" m -> display menu
+" q -> close NERDTree window
+" z -> zoom the NERDTree window
+
+""""""discarded
+"map <leader>ct <Action>(CloseEditor)
+"map <leader>cT <Action>(CloseAllEditorsButActive)
+"map <leader>r <Action>(Run)
+"map <leader>s <Action>(Stop)
+"map <leader>d <Action>(Debug)
+
+"map <leader>ed <Action>(ShowErrorDescription)
+"map <leader>i <Action>(QuickImplementations)
+
+

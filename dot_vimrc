@@ -91,7 +91,6 @@ au FileType python nmap <leader>r :w<CR>:exec '!python3' shellescape(@%,1)<CR>
 au FileType lua nmap <leader>r :w<CR>:exec '!lua' shellescape(@%,1)<CR>
 au FileType c nmap <leader>r :w<CR>:exec '!make'<CR>
 
-
 " Everything below this is written for educational purposes while learning
 " vim. Delete if not necessary
 
