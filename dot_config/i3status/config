@@ -1,0 +1,31 @@
+general {
+	output_format = "i3bar"
+	colors = true
+	interval = 10
+	color_good = "#aaff00"
+	color_degraded = "#00dddd"
+	color_bad = "#ff2200"
+}
+order += "disk /"
+order += "disk /home"
+order += "cpu"
+order += "memory"
+order += "time"
+order += "volume master"
+
+disk "/" {
+	format = "/ %avail"
+	prefix_type = custom
+}
+
+disk "/home" {
+	format = "Home: 🏠 %avail"
+	prefix_type = custom
+}
+
+volume master {
+	format = "🔉 %volume"
+	device = default
+	mixer = "Master"
+}
+

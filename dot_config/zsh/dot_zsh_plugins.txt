@@ -1,0 +1,4 @@
+rupa/z
+zsh-users/zsh-completions
+akash329d/zsh-alias-finder
+jeffreytse/zsh-vi-mode

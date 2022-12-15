@@ -1,0 +1,219 @@
+[colors]
+background = #282A2E
+background-alt = #373B41
+foreground = #C5C8C6
+primary = #F0C674
+secondary = #8ABEB7
+alert = #A54242
+disabled = #707880
+module_fg = #FFBF00
+module_bg = #{colors.background}
+
+[bar/main]
+width = 100%
+height = 24pt
+radius = 0
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 2pt
+border-size = 0pt
+border-color = #000000
+padding-left = 0
+padding-right = 1
+module-margin = 2
+separator = |
+font-0 = "FiraCode:size=11:weight=bold;2"
+font-1 = "Noto Color Emoji:scale=10:style=Regular;2"
+enable-ipc = true
+
+[bar/top]
+inherit = bar/main
+modules-left = xworkspaces i3 xwindow
+modules-right = fs-root fs-home pulseaudio memory cpu wlan
+; wm-restack = generic
+; wm-restack = bspwm
+; wm-restack = i3
+; override-redirect = true
+
+[bar/bottom]
+inherit = bar/main
+bottom = true
+modules-right = battery date
+tray-position = right
+
+;;;;;;;;;;; MODULES ;;;;;;;;;;;;;;;
+[module/xworkspaces]
+format = <label-state>
+type = internal/xworkspaces
+label-active = %name%
+label-active-background = ${colors.background-alt}
+label-active-underline= ${colors.module_fg}
+label-active-padding = 2
+
+label-occupied = %name%
+label-occupied-padding = 1
+label-urgent = %name%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${colors.disabled}
+label-empty-padding = 1
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:60:...%
+
+[fs-base]
+type = internal/fs
+fixed-values = true
+interval = 30
+format-mounted-prefix-foreground = ${colors.module_fg}
+format-mounted-prefix-background = ${colors.module_bg}
+
+[module/fs-root]
+inherit = fs-base
+mount-0 = /
+label-mounted = %free%
+; label-mounted-foreground = ${colors.module_fg}
+; format-mounted-prefix = "root: "
+format-mounted-prefix = "🌱 "
+format-prefix-font = 2
+
+[module/fs-home]
+inherit = fs-base
+mount-0 = /home
+format-mounted-prefix = "🏠 "
+format-prefix-font = 2
+label-mounted = %free%
+
+; [module/filesystem]
+; type = internal/fs
+; mount-0 = /
+; mount-1 = /home
+; interval = 30
+; fixed-values = true
+
+; ; label-mounted = %{F#F0C674}%mountpoint%%{F-} %percentage_used%%
+; label-mounted = %{F#F0C674}%mountpoint%:%{F-} %free%
+; label-unmounted = %mountpoint%: not mounted
+; label-unmounted-foreground = ${colors.disabled}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = true
+interval = 5
+; format-volume-prefix = "vol: "
+format-volume-prefix = "🔈 "
+format-prefix-font = 2
+format-volume-prefix-foreground = ${colors.module_fg}
+format-volume-prefix-background = ${colors.module_bg}
+format-volume = <label-volume>
+label-volume = %percentage%%
+label-muted = muted
+label-muted-foreground = ${colors.disabled}
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+label-layout = %layout%
+label-layout-foreground = ${colors.primary}
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-foreground = ${colors.background}
+label-indicator-background = ${colors.secondary}
+
+[module/memory]
+type = internal/memory
+interval = 5
+format = <label>
+label = %gb_used%
+format-prefix = "ram: "
+format-prefix-foreground = ${colors.module_fg}
+format-prefix-background = ${colors.module_bg}
+
+bar-used-indicator =
+bar-used-width = 4
+bar-used-foreground-0 = #55aa55
+bar-used-foreground-1 = #557755
+bar-used-foreground-2 = #f5a70a
+bar-used-foreground-3 = #ff5555
+bar-used-fill = ▐
+bar-used-empty = ▐
+bar-used-empty-foreground = #444444
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "cpu: "
+format-prefix-foreground = ${colors.module_fg}
+label = %percentage:2%%
+
+[network-base]
+type = internal/network
+interval = 5
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
+
+[module/wlan]
+inherit = network-base
+interface = wlp0s20f3
+interface-type = wireless
+; format-connected-prefix = "wlan: "
+format-connected-prefix = "📡 "
+format-prefix-font = 2
+format-connected-prefix-foreground = ${colors.module_fg}
+label-connected = %local_ip%
+
+[module/eth]
+inherit = network-base
+interface-type = wired
+label-connected = %{F#F0C674}%ifname%%{F-} %local_ip%
+
+[module/date]
+type = internal/date
+interval = 1
+date = %a %d %b %Y
+date-alt = %Y-%m-%d %H:%M:%S
+time = %H:%M:%S
+label = %date% - %time%
+label-foreground = ${colors.module_fg}
+
+[module/battery]
+type = internal/battery
+full-at = 100
+low-at = 20
+battery = BAT0
+adapter = ADP0
+
+format-prefix-font = 2
+
+format-charging = <label-charging>
+label-charging = %percentage%%
+format-charging-prefix = "🔋"
+format-charging-prefix-foreground = ${colors.module_fg}
+
+format-full = <label-full>
+label-full = %percentage%%
+format-full-prefix = "🔋"
+format-full-prefix-foreground = ${colors.module_fg}
+
+format-discharging = <label-discharging>
+label-discharging = %percentage%%
+format-discharging-prefix = "🔋"
+format-discharging-prefix-foreground = ${colors.module_fg}
+
+[module/i3]
+type = internal/i3
+format = <label-mode>
+
+label-mode = %mode%
+format-prefix = "mode: "
+format-prefix-foreground = ${colors.module_fg}
+
+[settings]
+screenchange-reload = true
+pseudo-transparency = false
+
+; vim:ft=dosini

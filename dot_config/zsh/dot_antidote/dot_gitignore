@@ -1,0 +1,10 @@
+~*
+*.zwc
+*.zwc.old
+.ztap/
+.cache/
+.tmp/
+.plugins/
+.todo/
+*.old
+**/realzdotdir/zsh_plugins.zsh
