@@ -1,0 +1,125 @@
+packloadall "load all plugins in pack dir
+silent! helptags ALL "load help files for all plugins
+set number "show line numbers
+set showmatch "show matching bracket
+set showmode "show mode in status bar (insert,normal etc)
+set showcmd "show typed command in status bar
+set title "show file name in title bar
+set cursorline "highlights the current line
+set ruler "show cursor position in status bar
+set t_Co=256 "enable 256 colors
+set scrolloff=3 "show 3 lines below current location
+set autoread "auto read outside changes
+syntax enable "enable syntax highlighting
+set guifont:Source\ Code\ Pro:h15
+set title "show filename in title bar
+set hlsearch "highlight search term
+set incsearch "do incremental search
+set ignorecase "ignore case while searching
+set foldmethod=indent
+set clipboard=unnamed,unnamedplus
+" colorscheme gruvbox
+set bg=dark
+"set textwidth=80
+"set colorcolumn=+1
+set hidden
+set backspace=indent,eol,start
+set splitright "opens new vertical split on the right
+set splitbelow " opens new split below
+
+let mapleader = "\\"
+let maplocalleader = ","
+
+nnoremap <localleader>ev :vsplit $MYVIMRC<CR>
+nnoremap <localleader>sv :source $MYVIMRC<CR>
+
+let &t_SI.="\e[5 q"
+let &t_SR.="\e[4 q"
+let &t_EI.="\e[1 q"
+
+"switch syntax highlighting on if the terminal has colors
+if &t_Co > 2 || has("gui_running")
+	syntax on
+endif
+
+if &term =~ '256color'
+	set t_ut=
+endif
+
+"specify plugin directory
+call plug#begin('~/.vim/plugged') 
+" Plug 'wakatime/vim-wakatime'
+Plug 'vim-airline/vim-airline'
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+Plug 'rust-lang/rust.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'bling/vim-bufferline'
+Plug 'tpope/vim-unimpaired'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'VonHeikemen/fine-cmdline.nvim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install()}}
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-scriptease'
+call plug#end()
+
+"For a .go file, \r runs :GoRun
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>g <Plug>(go-doc)
+let g:go_doc_popup_window = 1
+
+"rust settings
+au FileType rust nmap <leader>r :RustRun<CR>
+let g:rustfmt_autosave = 1
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
+nnoremap <C-p> :lua require('fine-cmdline').open()<CR>
+
+au FileType python nmap <leader>r :w<CR>:exec '!python3' shellescape(@%,1)<CR>
+au FileType lua nmap <leader>r :w<CR>:exec '!lua' shellescape(@%,1)<CR>
+au FileType c nmap <leader>r :w<CR>:exec '!make'<CR>
+
+
+" Everything below this is written for educational purposes while learning
+" vim. Delete if not necessary
+
+nnoremap <leader>' viw<esc>bi'<esc>ea'<esc>
+vnoremap <leader>' `<<esc>i'<esc>lea'<esc>
+
+" onoremap p :<c-u>i(
+onoremap i( :<c-u>normal! f(vi(<cr>
+onoremap il( :<c-u>normal! F(vi(<cr>
+
+" augroup OnWriteGroup
+" 	autocmd!
+" 	autocmd BufWrite * echom "WROTE IT BRO"
+" augroup END
+
+onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
+onoremap ah :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rg_vk0"<cr>
+
+" function WelcomeAll(...)
+" 	echom "We have " . a:0 . " people today"
+" 	if a:0 ># 0
+" 		echom "Welcome "
+" 		echo a:000
+" 	endif
+" endfunction
+
+" nnoremap <leader>nh :set nohlsearch<cr>
+" nnoremap <leader>g :silent :execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
+nnoremap <localleader>co :copen<cr>
+nnoremap <localleader>cc :cclose<cr>
+
