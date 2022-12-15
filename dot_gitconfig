@@ -1,0 +1,28 @@
+[user]
+	email = avisekhon@gmail.com
+	name = avjinder
+
+[init]
+	defaultBranch = main
+
+[color]
+	ui = auto
+
+[core]
+	editor = nvim
+	excludesfile = ~/.dotfiles/.gitignore_global
+
+[diff]
+	mnemonicPrefix = true
+	renames = true
+
+[status]
+	submoduleSummary = true
+
+[credential]
+	helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-wincred.exe
+
+[alias]
+	st = status
+	lol = log --oneline --all --graph
+
