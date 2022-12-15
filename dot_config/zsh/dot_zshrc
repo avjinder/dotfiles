@@ -31,7 +31,8 @@ source $ZSH/oh-my-zsh.sh
 ################### ALIASES ##################
 alias sc="source $ZDOTDIR/.zshrc"
 alias viz="vim ~/.zshrc"
-alias niz="nvim ~/.zshrc"
+# alias niz="nvim ~/.zshrc"
+alias niz="chezmoi edit $ZDOTDIR/.zshrc"
 alias viv="vim ~/.vimrc"
 alias niv="nvim ~/dotfiles/nvim/init.lua"
 alias winhm="cd /mnt/c/Users/91783/"
@@ -126,4 +127,4 @@ bindkey -v
 # 	local dir
 # 	dir=$(find ${1:-.} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf +m) && cd "$dir"
 # }
-
+#
