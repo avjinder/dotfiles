@@ -29,7 +29,7 @@ enable-ipc = true
 [bar/top]
 inherit = bar/main
 modules-left = xworkspaces i3 xwindow
-modules-right = fs-root fs-home pulseaudio memory cpu wlan
+modules-right = fs-root fs-home pulseaudio memory cpu wlan weather
 ; wm-restack = generic
 ; wm-restack = bspwm
 ; wm-restack = i3
@@ -211,6 +211,11 @@ format = <label-mode>
 label-mode = %mode%
 format-prefix = "mode: "
 format-prefix-foreground = ${colors.module_fg}
+
+[module/weather]
+type = custom/script
+exec = ~/.local/bin/scripts/weather.sh
+; tail = true
 
 [settings]
 screenchange-reload = true
