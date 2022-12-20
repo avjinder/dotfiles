@@ -191,17 +191,17 @@ format-prefix-font = 2
 
 format-charging = <label-charging>
 label-charging = %percentage%%
-format-charging-prefix = "🔋"
+format-charging-prefix = "Charging 🔋"
 format-charging-prefix-foreground = ${colors.module_fg}
 
 format-full = <label-full>
 label-full = %percentage%%
-format-full-prefix = "🔋"
+format-full-prefix = "Charged 🔋"
 format-full-prefix-foreground = ${colors.module_fg}
 
 format-discharging = <label-discharging>
 label-discharging = %percentage%%
-format-discharging-prefix = "🔋"
+format-discharging-prefix = "Discharging 🔋"
 format-discharging-prefix-foreground = ${colors.module_fg}
 
 [module/i3]

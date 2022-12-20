@@ -32,7 +32,7 @@ source $ZSH/oh-my-zsh.sh
 alias sc="source $ZDOTDIR/.zshrc"
 alias viz="vim ~/.zshrc"
 # alias niz="nvim ~/.zshrc"
-alias niz="chezmoi edit $ZDOTDIR/.zshrc"
+alias niz="chezmoi edit --apply $ZDOTDIR/.zshrc"
 alias viv="vim ~/.vimrc"
 alias niv="nvim ~/dotfiles/nvim/init.lua"
 alias winhm="cd /mnt/c/Users/91783/"
@@ -42,7 +42,8 @@ alias info="info --vi"
 # alias bat="batcat"
 alias rdo="radio.sh"
 alias txk='tmux kill-session -t $(tmux ls | cut -d ':' -f 1 | fzf --preview='' --height 40%)'
-
+alias cz='chezmoi'
+alias pth="echo $PATH | tr ':' '\n'"
 
 # suffix aliases: files with these filetypes will open in vscode
 alias -s md=code
@@ -53,8 +54,9 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.local/bin/scripts
 export PATH=$PATH:$HOME/.npm-global/bin
-export PATH=$PATH:$HOME/.dotfiles/scripts
+# export PATH=$PATH:$HOME/.dotfiles/scripts
 export INFOPATH=$INFOPATH/usr/share/info/emacs
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 export EDITOR='nvim'

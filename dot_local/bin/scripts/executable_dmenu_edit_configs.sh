@@ -20,41 +20,41 @@ case "$choice" in
 		echo "Program terminated." && exit 1
 		;;
 	polybar)
-		choice="$HOME/.dotfiles/polybar/config"
+		choice="$HOME/.config/polybar/config"
 		;;
 	neovim)
-		choice="$HOME/.dotfiles/nvim/init.lua"
+		choice="$HOME/.config/nvim/init.lua"
 		;;
 	i3)
-		choice="$HOME/.dotfiles/i3/config"
+		choice="$HOME/.config/i3/config"
 		;;
 	vim)
-		choice="$HOME/.dotfiles/.vimrc"
+		choice="$HOME/.vimrc"
 		;;
 	zsh)
-		choice="$HOME/.dotfiles/zsh/.zshrc"
+		choice="$HOME/.config/zsh/.zshrc"
 		;;
 	kitty)
-		choice="$HOME/.dotfiles/kitty/kitty.conf"
+		choice="$HOME/.config/kitty/kitty.conf"
 		;;
 	tmux)
-		choice="$HOME/.dotfiles/.tmux.conf"
+		choice="$HOME/.tmux.conf"
 		;;
-	gi.dotfiles)
-		choice="$HOME/.dotfiles/.gitconfig"
+	gi.config)
+		choice="$HOME/.gitconfig"
 		;;
 	gitignore)
-		choice="$HOME/.dotfiles/.gitignore_global"
+		choice="$HOME/.gitignore_global"
 		;;
 	i3status)
-		choice="$HOME/.dotfiles/i3status/config"
+		choice="$HOME/.config/i3status/config"
 		;;
 	dunst)
-		choice="$HOME/.dotfiles/dunst/dunstrc"
+		choice="$HOME/.config/dunst/dunstrc"
 		;;
 	*)
 		exit 1
 		;;
 esac
 
-kitty -e nvim "$choice"
+kitty -e chezmoi edit --apply "$choice"
