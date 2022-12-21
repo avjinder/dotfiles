@@ -137,6 +137,7 @@ packer.startup({ function()
 		run = 'bash ./install.sh'
 
 	}
+	use 'karb94/neoscroll.nvim'
 
 end,
 
