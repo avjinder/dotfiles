@@ -18,12 +18,8 @@ require('which-key').register({
 		["4"] = { '<cmd>lua require("harpoon.ui").nav_file(4)<cr>', "Go to fourth harpoon file" },
 		["5"] = { '<cmd>lua require("harpoon.ui").nav_file(5)<cr>', "Go to fifth harpoon file" },
 		["6"] = { '<cmd>lua require("harpoon.ui").nav_file(6)<cr>', "Go to sixth harpoon file" },
-	},
-	f = {
-		name = "Harpoon",
-		f = { "<cmd>Telescope harpoon marks<cr>", "Telescope: Show Harpoon marks" }
 	}
 }, {
-	prefix = '<leader>',
+	prefix = '<localleader>',
 	mode = 'n',
 })

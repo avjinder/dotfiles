@@ -14,6 +14,7 @@ require('which-key').register({
 		s = { vim.lsp.buf.document_symbol, "Lsp: Show Document Symbols" },
 		t = { vim.lsp.buf.type_definition, "Lsp: Type Definition" },
 		f = { vim.lsp.buf.format, "Lsp: Format Document" },
+		c = { vim.lsp.buf.code_action, "Lsp: Code Action" }
 	},
 	k = { vim.lsp.buf.hover, "Lsp: Show Documentation" }
 }, { prefix = '<leader>', mode = 'n' })

@@ -3,14 +3,14 @@ if not ok then
 	return
 end
 
--- vim.keymap.set('n', '<leader>ff', '<Cmd>Telescope find_files<CR>,', { desc = "Telescope Find Files" })
-vim.keymap.set('n', '<leader>o', '<Cmd>Telescope find_files<CR>,', { desc = "Telescope Find Files" })
-vim.keymap.set('n', '<leader>b', '<Cmd>Telescope buffers<CR>', { desc = "Telescope List Buffers" })
-vim.keymap.set('n', '<leader>fh', '<Cmd>Telescope help_tags<CR>', { desc = "Telescope Help Tags" })
-vim.keymap.set('n', '<leader>fc', '<Cmd>Telescope commands<CR>', { desc = "Telescope List Commands" })
-vim.keymap.set('n', '<leader>fm', '<Cmd>Telescope man_pages<CR>', { desc = "Telescope Man Pages" })
-vim.keymap.set('n', '<leader>fk', '<Cmd>Telescope keymaps<CR>', { desc = "Telescope Show Keymaps" })
-vim.keymap.set('n', '<leader>fB', '<Cmd>Telescope builtin<CR>', { desc = "Telescope Show Builtin Commands" })
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>o', builtin.find_files, { desc = "Telescope Find Files" })
+vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = "Telescope List Buffers" })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "Telescope Help Tags" })
+vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = "Telescope List Commands" })
+vim.keymap.set('n', '<leader>fm', builtin.man_pages, { desc = "Telescope Man Pages" })
+vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = "Telescope Show Keymaps" })
+vim.keymap.set('n', '<leader>fB', builtin.builtin, { desc = "Telescope Show Builtin Commands" })
 
 telescope.setup {
 	defaults = {

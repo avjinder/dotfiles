@@ -1,10 +1,9 @@
--- local npairs = require('nvim-autopairs')
--- npairs.setup{
--- 	disable_filetype = {"TelescopePrompt", "vim"}
--- }
+local ok, npairs = pcall(require,'nvim-autopairs')
+if not ok then
+	return
+end
 
-
--- setup autopairs integration vim nvim-cmp:
--- https://github.com/windwp/nvim-autopairs#you-need-to-add-mapping-cr-on-nvim-cmp-setupcheck-readmemd-on-nvim-cmp-repo
-
--- vim.pretty_print(vim.fn)
+npairs.setup {}
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+local cmp = require('cmp')
+cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())

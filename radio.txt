@@ -46,3 +46,4 @@ Radio Paradise Music;http://stream-uk1.radioparadise.com/aac-320
 Rave Music;https://radio.joinrave.com/stream
 BBC Radio 1 RnB Music;https://stream.live.vc.bbcmedia.co.uk/bbc_radio_one
 WQHT - Hot 97 Music;https://24283.live.streamtheworld.com/WQHTFMAAC.aac
+KHOP Music;https://playerservices.streamtheworld.com/api/livestream-redirect/KHOPFMAAC.aac

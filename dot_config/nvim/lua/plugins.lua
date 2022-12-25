@@ -80,6 +80,10 @@ packer.startup({ function()
 	use 'folke/which-key.nvim'
 	use 'folke/trouble.nvim'
 	use 'folke/neodev.nvim'
+	use {
+		'folke/todo-comments.nvim',
+		requires = { 'nvim-lua/plenary.nvim' }
+	}
 
 	use 'voldikss/vim-floaterm'
 
@@ -138,6 +142,12 @@ packer.startup({ function()
 
 	}
 	use 'karb94/neoscroll.nvim'
+	use 'lukas-reineke/indent-blankline.nvim'
+	use {
+		'kosayoda/nvim-lightbulb',
+		requires = 'antoinemadec/FixCursorHold.nvim'
+	}
+	use 'rareitems/printer.nvim'
 
 end,
 
@@ -158,4 +168,13 @@ end,
 vim.notify = require('notify')
 
 require('trouble').setup {}
+require('nvim-lightbulb').setup { autocmd = { enabled = true }, }
+require('printer').setup {
+	keymap = 'gp',
+	formatters = {
+		rust = function (_, var)
+			return string.format("dbg!(&%s);", var)
+		end
+	}
 
+}

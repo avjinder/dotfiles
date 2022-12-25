@@ -29,7 +29,7 @@ enable-ipc = true
 [bar/top]
 inherit = bar/main
 modules-left = xworkspaces i3 xwindow
-modules-right = fs-root fs-home pulseaudio memory cpu wlan weather
+modules-right = fs-root fs-home pulseaudio memory cpu wlan
 ; wm-restack = generic
 ; wm-restack = bspwm
 ; wm-restack = i3
@@ -38,7 +38,7 @@ modules-right = fs-root fs-home pulseaudio memory cpu wlan weather
 [bar/bottom]
 inherit = bar/main
 bottom = true
-modules-right = battery date
+modules-right = battery weather date
 tray-position = right
 
 ;;;;;;;;;;; MODULES ;;;;;;;;;;;;;;;

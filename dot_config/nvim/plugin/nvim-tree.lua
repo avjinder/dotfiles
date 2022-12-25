@@ -24,4 +24,7 @@ require('nvim-tree').setup{
 }
 }
 
-vim.keymap.set('n', '<leader>t',  '<Cmd>NvimTreeToggle<CR>', {desc = "Toggle NvimTree"})
+-- vim.keymap.set('n', '<leader>t',  '<Cmd>NvimTreeToggle<CR>', {desc = "Toggle NvimTree"})
+require('which-key').register({
+	t = { '<cmd>NvimTreeToggle<cr>', "Toggle NvimTree"},
+}, { prefix = '<leader>', mode = 'n'})

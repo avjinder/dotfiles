@@ -12,7 +12,6 @@ require('which-key').register({
 		t = { "<cmd>FloatermToggle<cr>", "Toggle Floaterm" },
 		k = { "<cmd>FloatermKill<cr>", "Kill Floaterm" },
 		K = { "<cmd>FloatermKill!<cr>", "Kill All Floaterms" },
-
 	}
 }, {
 	prefix = '<localleader>',
