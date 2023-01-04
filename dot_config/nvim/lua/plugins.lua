@@ -148,6 +148,7 @@ packer.startup({ function()
 		requires = 'antoinemadec/FixCursorHold.nvim'
 	}
 	use 'rareitems/printer.nvim'
+	use 'j-hui/fidget.nvim'
 
 end,
 
@@ -176,5 +177,6 @@ require('printer').setup {
 			return string.format("dbg!(&%s);", var)
 		end
 	}
-
 }
+
+require('fidget').setup{}
