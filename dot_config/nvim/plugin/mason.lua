@@ -70,6 +70,22 @@ require("mason-lspconfig").setup_handlers({
 				}
 			}
 		}
+	end,
+
+	["sqls"] = function()
+		require("lspconfig").sqls.setup {
+			capabilities = cap,
+			settings = {
+				sqls = {
+					connections = {
+						{
+							driver = "postgresql",
+							dataSourceName = "postgresql://avjinder:avjinder@localhost/doughfellas",
+						}
+					}
+				}
+			},
+		}
 	end
 })
 
