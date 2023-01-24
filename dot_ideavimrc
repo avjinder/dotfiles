@@ -15,13 +15,13 @@ set visualbell
 let mapleader="\"
 
 """"""""""" Leader Commands -----------------------
-
 map <leader><leader> <Action>(RecentFiles)
 map <leader>s <Action>(FileStructurePopup)
 map <leader>b <Action>(Switcher)
 map <leader>f <Action>(GotoFile)
 map <leader>a <Action>(GotoAction)
 map <leader>g <Action>(Generate)
+map <leader>C <Action>(ShowIntentionActions)
 map <leader>en <Action>(EditSourceInNewWindow)
 map <leader>n <Action>(NextWindow)
 map <leader>q <Action>(CloseContent)
@@ -37,7 +37,6 @@ map <Space>r <Action>(ChooseRunConfiguration)
 map <Space>d <Action>(Debug)
 
 """"""""""" Comma Commands ------------------
-
 map ,bc <Action>(CloseEditor)
 map ,bC <Action>(CloseAllEditorsButActive)
 
@@ -64,6 +63,16 @@ map ,dn <Action>(StepOver)
 map ,di <Action>(StepInto)
 map ,do <Action>(StepOut)
 
+map ,1 <Action>(GoToTab1)
+map ,2 <Action>(GoToTab2)
+map ,3 <Action>(GoToTab3)
+map ,4 <Action>(GoToTab4)
+map ,5 <Action>(GoToTab5)
+map ,6 <Action>(GoToTab6)
+map ,7 <Action>(GoToTab7)
+map ,8 <Action>(GoToTab8)
+map ,9 <Action>(GoToTab9)
+map ,$ <action>(GoToLastTab)
 
 """"""""" Control Commands ----------------
 map <C-z> <Action>(ToggleZenMode)

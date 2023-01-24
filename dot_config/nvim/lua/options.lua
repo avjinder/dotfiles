@@ -9,6 +9,7 @@ vim.opt.ignorecase = true -- ignore case in search
 vim.opt.laststatus = 3 -- global statusline
 vim.opt.showmatch = true -- show matching bracket
 vim.opt.number = true -- show line numbers
+vim.opt.numberwidth = 3
 vim.opt.ruler = true -- show row and column numbers
 vim.opt.tabstop = 4 -- tab equals <n> spaces
 vim.opt.shiftwidth = 4 -- use <n> spaces for each indentation
