@@ -10,8 +10,8 @@ include ./modes.conf
 include ./utils.conf
 include ./workspaces.conf
 
-default_border normal 1
-default_floating_border pixel 2
+default_border normal 0
+default_floating_border pixel 0
 title_align center
 
 # Use Mouse+$mod to drag floating windows to their wanted position

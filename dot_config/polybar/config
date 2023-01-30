@@ -38,7 +38,7 @@ modules-right = fs-root fs-home pulseaudio memory cpu wlan
 [bar/bottom]
 inherit = bar/main
 bottom = true
-modules-right = battery weather date
+modules-right = battery date
 tray-position = right
 
 ;;;;;;;;;;; MODULES ;;;;;;;;;;;;;;;
