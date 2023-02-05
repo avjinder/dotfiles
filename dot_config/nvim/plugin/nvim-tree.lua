@@ -1,7 +1,7 @@
 require('nvim-tree').setup{
 	sort_by= 'case_sensitive',
 	disable_netrw = true,
-	open_on_setup = true,
+	-- open_on_setup = true,
 	open_on_tab = true,
 	view = {
 		float = {
