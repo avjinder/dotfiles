@@ -8,14 +8,17 @@ NDTV India TV News;http://ndtvindiaelemarchana.akamaized.net/hls/live/2003679/nd
 CNN News18 TV;https://nw18live.cdn.jio.com/bpk-tv/CNN_News18_NW18_MOB/output01/CNN_News18_NW18_MOB-audio_98835_eng=98800-video=560800.m3u8
 CNBC TV18 Awaaz TV News;https://nw18live.cdn.jio.com/bpk-tv/CNBC_Awaaz_NW18_MOB/output01/CNBC_Awaaz_NW18_MOB-audio_97234_eng=97200-video=760000.m3u8
 Zee News Punjab TV;https://d2o99h9y4u86gh.cloudfront.net/out/v1/9effd792d5d24c46b8694ea441af3fe1/index_4.m3u8?akes=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzIwMzA0OTR9.QXdi6Rw_QVv3pnuVITAeA2trAOAumJTyGJki7lRkFKg
+Zee Business;https://d8gy12azhr71i.cloudfront.net/out/v1/45be109c5b4f44319e882da947377364/index_5.m3u8
 ABP Sanjha News TV;https://d316coox0if60r.cloudfront.net/out/v1/7723f2221c3449c3910aaa8f91592bf0/index.m3u8
 PTC News TV;https://streaming.ptcplay.com/PTCNEWSINONE/smil:Live.smil/playlist.m3u8
 WION TV News;https://www.youtube.com/watch?v=3JlVqzNSYys
 NewsX TV News;https://www.youtube.com/watch?v=eyy2xHCnE8c
 NDTV Profit TV News;http://ndtvprofitelemarchana.akamaized.net/hls/live/2003680/ndtvprofit/masterp_480p@3.m3u8
 Times Now TV News;https://pubads.g.doubleclick.net/ssai/event/1mR1QUQ3Tg-VuKfiyjwNuA/master.m3u8
-ET Now TV News;https://dai.google.com/linear/hls/pb/event/pJrzNyDoT_K_GwYQsijTsQ/stream/d37ceb8c-6404-4fc0-b482-39ead2f91895:TPE/master.m3u8
-Mirror Now TV News;https://dai.google.com/linear/hls/pb/event/DXkHhH2QSnma-HnE3QJqlA/stream/79ae9f02-5b32-4e46-bd73-9a94019d8d89:SIN2/master.m3u8
+Times Now Navbharat;https://dai.google.com/linear/hls/pb/event/nRWQsGoJSzmcErJFgAy67g/stream/8836eb9c-89f7-4f4c-bd37-71f182f91d1c:SIN2/master.m3u8
+ET Now TV News;https://etnowweblive.akamaized.net/hls/live/2034678/ETNOWMSL4/master.m3u8
+ET Now Sandesh;https://dai.google.com/linear/hls/pb/event/Pj6A7e21SN64xv6g4sssCA/stream/1d8e9860-a749-40f5-927b-61c6474f1333:SIN/variant/827d34fa1e45f02789d154f84d481d51/bandwidth/1693000.m3u8
+Mirror Now TV News;https://mbnowweb.akamaized.net/hls/live/2034712/MIRRORNOW4MSL/master.m3u8
 DD News TV;https://www.youtube.com/watch?v=0UtGWtPcOI4
 Al Jazeera TV News;https://www.youtube.com/watch?v=GEumHK0hfdo
 France 24 TV News;https://www.youtube.com/watch?v=h3MuIUNCCzI
