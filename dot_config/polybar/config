@@ -151,7 +151,8 @@ label = %percentage:2%%
 
 [network-base]
 type = internal/network
-interval = 5
+interval = 3
+accumulate-stats = true
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
@@ -164,7 +165,8 @@ interface-type = wireless
 format-connected-prefix = "📡 "
 format-prefix-font = 2
 format-connected-prefix-foreground = ${colors.module_fg}
-label-connected = %local_ip%
+label-connected = " %local_ip%: %downspeed%  %upspeed%  "
+; label-connected = %local_ip%
 
 [module/eth]
 inherit = network-base
