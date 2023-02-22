@@ -24,12 +24,13 @@ module-margin = 2
 separator = |
 font-0 = "FiraCode:size=11:weight=bold;2"
 font-1 = "Noto Color Emoji:scale=10:style=Regular;2"
+; font-3 = "JetBrainsMonoNL:size=10;0"
 enable-ipc = true
 
 [bar/top]
 inherit = bar/main
 modules-left = xworkspaces i3 xwindow
-modules-right = fs-root fs-home pulseaudio memory cpu wlan
+modules-right = fs-root fs-home pulseaudio memory cpu battery
 ; wm-restack = generic
 ; wm-restack = bspwm
 ; wm-restack = i3
@@ -38,7 +39,8 @@ modules-right = fs-root fs-home pulseaudio memory cpu wlan
 [bar/bottom]
 inherit = bar/main
 bottom = true
-modules-right = battery date
+; modules-left = battery
+modules-right = wlan date
 tray-position = right
 
 ;;;;;;;;;;; MODULES ;;;;;;;;;;;;;;;
@@ -164,8 +166,9 @@ interface-type = wireless
 ; format-connected-prefix = "wlan: "
 format-connected-prefix = "📡 "
 format-prefix-font = 2
-format-connected-prefix-foreground = ${colors.module_fg}
-label-connected = " %local_ip%: %downspeed%  %upspeed%  "
+format-connected-foreground = ${colors.module_fg}
+label-connected = "%local_ip%  %downspeed%  %upspeed%"
+; format-connected-prefix-foreground = ${colors.module_fg}
 ; label-connected = %local_ip%
 
 [module/eth]
