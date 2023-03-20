@@ -53,6 +53,7 @@ map ,tl <Action>(ActivateLogcatToolWindow)
 map ,tp <Action>(ActivateProblemsViewToolWindow)
 map ,tr <Action>(ActivateRunToolWindow)
 map ,tt <Action>(ActivateTerminalToolWindow)
+map ,te <Action>(ActivateAndroidEmulatorToolWindow)
 
 "map ,sb <Action>(ToggleLineBreakpoint)
 "map ,sn <Action>(StepOver)

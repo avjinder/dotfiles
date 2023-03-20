@@ -115,5 +115,10 @@ for_window [title="Picture-in-Picture"] sticky enable, floating enable, border n
 # for_window [title="mpv$"] floating enable, sticky enable, border none, resize set 480 320, move position 1360 730
 
 for_window [class="firefox" title="Library"] floating enable
+for_window [class="Contrast"] floating enable
+for_window [class="Calculator"] floating enable
+for_window [class="Timer"] floating enable
 for_window [class="Palette"] floating enable
 no_focus [title="mpv pip"]
+
+bindsym --release Print exec import ~/screenshot.png

@@ -20,7 +20,7 @@ ET Now TV News;https://etnowweblive.akamaized.net/hls/live/2034678/ETNOWMSL4/mas
 ET Now Sandesh;https://dai.google.com/linear/hls/pb/event/Pj6A7e21SN64xv6g4sssCA/stream/1d8e9860-a749-40f5-927b-61c6474f1333:SIN/variant/827d34fa1e45f02789d154f84d481d51/bandwidth/1693000.m3u8
 Mirror Now TV News;https://mbnowweb.akamaized.net/hls/live/2034712/MIRRORNOW4MSL/master.m3u8
 DD News TV;https://www.youtube.com/watch?v=0UtGWtPcOI4
-Al Jazeera TV News;https://www.youtube.com/watch?v=GEumHK0hfdo
+Al Jazeera TV News;https://www.youtube.com/watch?v=gCNeDWCI0vo
 France 24 TV News;https://www.youtube.com/watch?v=h3MuIUNCCzI
 BBC News TV;http://ott-cdn.ucom.am/s24/04.m3u8
 CNA News TV;https://www.youtube.com/watch?v=XWq5kBlakcQ
