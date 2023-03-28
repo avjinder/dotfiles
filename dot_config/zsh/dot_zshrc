@@ -57,6 +57,7 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.local/bin/scripts
 export PATH=$PATH:$HOME/.npm-global/bin
+export PATH=$PATH:$HOME/.fzf/bin
 # export PATH=$PATH:$HOME/.dotfiles/scripts
 export INFOPATH=$INFOPATH/usr/share/info/emacs
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
@@ -113,8 +114,13 @@ fi
 source $static_file
 unset antidote_dir plugins_txt static_file
 
+# shows all config options in dmenu, and lets you edit on selection
 ecg() {
 	dmenu_edit_configs.sh &!
+}
+
+bgset() {
+	feh --randomize --bg-center $HOME/Pictures/Wallpapers
 }
 
 if command -v bat &> /dev/null; then

@@ -42,11 +42,13 @@ map ,bc <Action>(CloseEditor)
 map ,bC <Action>(CloseAllEditorsButActive)
 
 map ,r <Action>(Refactorings.QuickListPopupAction)
+map ,c <Action>(ShowIntentionActions)
 map ,= <Action>(ReformatCode)
 map ,o <Action>(OptimizeImports)
-map ,v <Action>(VimFindActionIdAction)
 map ,i <Action>(QuickImplementations)
 map ,e <Action>(ShowErrorDescription)
+map ,va <Action>(VimFindActionIdAction)
+map ,vr <Action>(IdeaVim.ReloadVimRc.reload)
 
 map ,td <Action>(ActivateTODOToolWindow)
 map ,tl <Action>(ActivateLogcatToolWindow)
@@ -74,7 +76,7 @@ map ,6 <Action>(GoToTab6)
 map ,7 <Action>(GoToTab7)
 map ,8 <Action>(GoToTab8)
 map ,9 <Action>(GoToTab9)
-map ,$ <action>(GoToLastTab)
+map ,0 <action>(GoToLastTab)
 
 """"""""" Control Commands ----------------
 map <C-z> <Action>(ToggleZenMode)
@@ -86,6 +88,7 @@ map <C-;> <Action>(NextSplitter)
 "map <C-t> <Action>(ActivateTerminalToolWindow)
 map <C-x> <Action>(HideAllWindows)
 map <C-p> <Action>(JumpToLastWindow)
+map <C-a> <Action>(MaximizeEditorInSplit)
 
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -95,9 +98,14 @@ map <C-l> <C-w>l
 """""""" Tab Commands ------------------
 map <Tab> <Action>(NextTab)
 map <S-Tab> <Action>(PreviousTab)
-map <C-Tab> :tabm +1<CR>
-map <C-S-Tab> :tabm -1<CR>
+map ,> :tabm +1<CR>
+map ,< :tabm -1<CR>
+map ,$ :tabm <CR>
+map ,^ :tabm 0<CR>
+"map <C-Tab> :tabm +1<CR>
+"map <C-S-Tab> :tabm -1<CR>
 
+"Folding
 map Zc <Action>(CollapseAllRegions)
 map Zo <Action>(ExpandAllRegions)
 map zc <Action>(CollapseRegion)
@@ -112,6 +120,7 @@ map [[ <Action>(MethodUp)
 map ]] <Action>(MethodDown)
 map g, <Action>(JumpToLastChange)
 map g; <Action>(JumpToNextChange)
+map gk <Action>(QuickJavaDoc)
 
 """ Plugins --------------
 

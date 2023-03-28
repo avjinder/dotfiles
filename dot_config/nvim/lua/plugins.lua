@@ -149,6 +149,14 @@ packer.startup({ function()
 	}
 	use 'rareitems/printer.nvim'
 	use 'j-hui/fidget.nvim'
+	use {
+		'rmagatti/goto-preview',
+		config = function ()
+			require('goto-preview').setup{
+				default_mappings = true,
+			}
+		end
+	}
 
 end,
 

@@ -63,3 +63,11 @@ Lofi HipHop TV Music;https://www.youtube.com/watch?v=rUxyKA_-grg
 Adroit Jazz Underground Music;https://icecast.walmradio.com:8443/jazz
 Radio Paradise Music;http://stream-uk1.radioparadise.com/aac-320
 Rave Music;https://radio.joinrave.com/stream
+Calgary CityNews 660;https://rogers-hls.leanstream.co/rogers/cal660.stream/playlist.m3u8?environment=web&args=web_01
+Persian Radio Farda Music;http://n12.radiojar.com/cp13r2cpn3quv?rj-ttl=5&rj-tok=AAABhxX9viQAiRSH4ZosSJG7Gw
+Punjabi Radio Music;http://stream-010.zeno.fm/1k0y9f0cm0quv?zs=2NNnNgzsQ5yIcm017xOunQ
+9X Tashan Music;http://d2q8p4pe5spbak.cloudfront.net/bpk-tv/9Xtashan/9Xtashan.isml/9Xtashan-audio_208482_und=208000-video=877600.m3u8
+Radio Vibration Music;https://vibration.ice.infomaniak.ch/vibration-high.mp3
+Raute Music RnB;https://rautemusik-de-hz-fal-stream17.radiohost.de/breakz?
+Heart London Music;http://ice-sov.musicradio.com/HeartLondonMP3
+Hit Radio Music;http://hitradio-maroc.ice.infomaniak.ch/hitradio-maroc-128.mp3
