@@ -1,190 +1,169 @@
-local fn = vim.fn
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-
-if fn.empty(fn.glob(install_path)) > 0 then
-	fn.system({
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
 		"git",
 		"clone",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
 	})
-	print("Installing Packer")
-	vim.api.nvim_command("packadd packer.nvim")
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer = require('packer')
-local use = packer.use
-
-packer.startup({ function()
-	use 'wbthomason/packer.nvim'
-	use {
+local plugins = {
+	{
 		'junegunn/fzf',
-		run = function()
-			vim.fn['fzf#install']()
-		end
-	}
-	use 'tpope/vim-commentary'
+		build = function() vim.fn['fzf#install']() end
+	},
+	'tpope/vim-commentary',
 	-- tmux syntax highlighting and doc search
-	use 'tmux-plugins/vim-tmux'
-	-- use 'mhinz/vim-startify'
-	use 'savq/melange'
+	'tmux-plugins/vim-tmux',
+	'savq/melange',
 	-- replacement for built-in vim.notify
-	use 'rcarriga/nvim-notify'
-	use 'rcarriga/nvim-dap-ui'
+	'rcarriga/nvim-notify',
+	'rcarriga/nvim-dap-ui',
 
 	-- snippet
-	use 'hrsh7th/vim-vsnip'
-	use 'hrsh7th/vim-vsnip-integ'
+	'hrsh7th/vim-vsnip',
+	'hrsh7th/vim-vsnip-integ',
 
 	-- completion
-	use 'hrsh7th/nvim-cmp'
-	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/cmp-path'
-	use 'hrsh7th/cmp-cmdline'
-	use 'hrsh7th/cmp-nvim-lua'
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/cmp-nvim-lsp-signature-help'
-	use 'hrsh7th/cmp-vsnip'
+	{
+		'hrsh7th/nvim-cmp',
+		event = "InsertEnter",
+		dependencies = {
+			'hrsh7th/cmp-buffer',
+			'hrsh7th/cmp-path',
+			'hrsh7th/cmp-cmdline',
+			'hrsh7th/cmp-nvim-lua',
+			'hrsh7th/cmp-nvim-lsp',
+			'hrsh7th/cmp-nvim-lsp-signature-help',
+			'hrsh7th/cmp-vsnip',
+		}
+	},
 
-	use 'onsails/lspkind.nvim'
-	use 'anuvyklack/hydra.nvim'
+	'onsails/lspkind.nvim',
+	'anuvyklack/hydra.nvim',
 
-	use {
+	{
 		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons' },
-	}
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
+	},
 
-	use {
-		'kyazdani42/nvim-tree.lua',
-		requires = { 'kyazdani42/nvim-web-devicons' },
-	}
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.0',
-		requires = { 'nvim-lua/plenary.nvim' }
-	}
+	{
+		'nvim-tree/nvim-tree.lua',
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
+	},
+	{
+		'nvim-telescope/telescope.nvim',
+		tag = '0.1.0',
+		dependencies = { 'nvim-lua/plenary.nvim' }
+	},
 
-	use {
+	{
 		'nvim-treesitter/nvim-treesitter',
-		run = ':TSUpdate'
-	}
+		build = ':TSUpdate'
+	},
 
-	use {
+	{
 		'fatih/vim-go',
-		run = ':GoUpdateBinaries'
-	}
+		build = ':GoUpdateBinaries'
+	},
 
-	use 'lewis6991/gitsigns.nvim'
-	use 'lewis6991/impatient.nvim'
-	use 'lewis6991/hover.nvim'
+	'lewis6991/gitsigns.nvim',
+	'lewis6991/impatient.nvim',
+	'lewis6991/hover.nvim',
 
-	use 'folke/which-key.nvim'
-	use 'folke/trouble.nvim'
-	use 'folke/neodev.nvim'
-	use {
+	'folke/which-key.nvim',
+	'folke/trouble.nvim',
+	'folke/neodev.nvim',
+	{
 		'folke/todo-comments.nvim',
-		requires = { 'nvim-lua/plenary.nvim' }
-	}
+		dependencies = { 'nvim-lua/plenary.nvim' }
+	},
 
-	use 'voldikss/vim-floaterm'
+	'voldikss/vim-floaterm',
 
-	use {
+	{
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig"
-	}
+	},
 
-	use "rust-lang/rust.vim"
-	use "simrat39/rust-tools.nvim"
-	use "windwp/nvim-autopairs"
-	use 'stevearc/aerial.nvim'
-	use 'stevearc/dressing.nvim'
-	use 'stevearc/overseer.nvim'
-	use {
+	"rust-lang/rust.vim",
+	"simrat39/rust-tools.nvim",
+	"windwp/nvim-autopairs",
+	'stevearc/aerial.nvim',
+	'stevearc/dressing.nvim',
+	'stevearc/overseer.nvim',
+	{
 		'romgrk/barbar.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons' },
-	}
-	use 'bfredl/nvim-luadev'
-	use 'rebelot/kanagawa.nvim'
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
+	},
+	'bfredl/nvim-luadev',
+	'rebelot/kanagawa.nvim',
 
-	use 'rafamadriz/friendly-snippets'
-	use 'fladson/vim-kitty'
+	'rafamadriz/friendly-snippets',
+	'fladson/vim-kitty',
 
-	use 'mrjones2014/legendary.nvim'
-	use 'mfussenegger/nvim-dap'
-	use 'nyoom-engineering/oxocarbon.nvim'
-	use {
+	'mrjones2014/legendary.nvim',
+	'mfussenegger/nvim-dap',
+	'nyoom-engineering/oxocarbon.nvim',
+	{
 		'goolord/alpha-nvim',
-		requies = { 'nvim-tree/nvim-web-devicons' },
+		dependencies = { { 'nvim-tree/nvim-web-devicons'} },
 		config = function()
 			require('alpha').setup(require 'alpha.themes.startify'.config)
 		end
-	}
+	},
 
-	use 'ellisonleao/glow.nvim'
-	use {
+	'ellisonleao/glow.nvim',
+	{
 		'iamcco/markdown-preview.nvim',
-		run = function() vim.fn["mkdp#util#install"]() end
-	}
+		build = function() vim.fn["mkdp#util#install"]() end
+	},
 
-	use {
+	{
 		'godlygeek/tabular',
 		'preservim/vim-markdown'
-	}
+	},
 
-	use {
+	{
 		'ThePrimeagen/harpoon',
-		requires = { 'nvim-lua/plenary.nvim' }
-	}
+		dependencies = { 'nvim-lua/plenary.nvim' }
+	},
 
-	use {
+	{
 		'michaelb/sniprun',
-		run = 'bash ./install.sh'
-
-	}
-	use 'karb94/neoscroll.nvim'
-	use 'lukas-reineke/indent-blankline.nvim'
-	use {
+		build = 'bash ./install.sh'
+	},
+	'karb94/neoscroll.nvim',
+	'lukas-reineke/indent-blankline.nvim',
+	{
 		'kosayoda/nvim-lightbulb',
-		requires = 'antoinemadec/FixCursorHold.nvim'
-	}
-	use 'rareitems/printer.nvim'
-	use 'j-hui/fidget.nvim'
-	use {
-		'rmagatti/goto-preview',
-		config = function ()
-			require('goto-preview').setup{
-				default_mappings = true,
-			}
-		end
-	}
-
-end,
-
-	config = {
-		display = {
-			open_fn = function()
-				return require('packer.util').float({ border = "rounded" })
-			end
-		},
-		profile = {
-			enable = true,
-			threshold = 0,
-			max_jobs = 20,
-		},
-	}
-})
-
-vim.notify = require('notify')
-
-require('trouble').setup {}
-require('nvim-lightbulb').setup { autocmd = { enabled = true }, }
-require('printer').setup {
-	keymap = 'gp',
-	formatters = {
-		rust = function (_, var)
-			return string.format("dbg!(&%s);", var)
-		end
-	}
+		dependencies = { 'antoinemadec/FixCursorHold.nvim' }
+	},
+	'rareitems/printer.nvim',
+	'j-hui/fidget.nvim',
+	'rmagatti/goto-preview',
 }
 
-require('fidget').setup{}
+local opts = {}
+require("lazy").setup(plugins, opts)
+
+-- vim.notify = require('notify')
+
+-- require('trouble').setup {}
+-- require('nvim-lightbulb').setup { autocmd = { enabled = true }, }
+-- require('printer').setup {
+-- 	keymap = 'gp',
+-- 	formatters = {
+-- 		rust = function(_, var)
+-- 			return string.format("dbg!(&%s);", var)
+-- 		end
+-- 	}
+-- }
+
+-- require('fidget').setup {}
+-- require('fidget').setup {}

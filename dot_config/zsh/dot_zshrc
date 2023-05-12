@@ -58,6 +58,7 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.local/bin/scripts
 export PATH=$PATH:$HOME/.npm-global/bin
 export PATH=$PATH:$HOME/.fzf/bin
+export PATH=$HOME/.tmuxifier/bin:$PATH
 # export PATH=$PATH:$HOME/.dotfiles/scripts
 export INFOPATH=$INFOPATH/usr/share/info/emacs
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
@@ -138,3 +139,4 @@ bindkey -v
 # }
 #
 fpath+=~/.zfunc
+eval "$(tmuxifier init -)"

@@ -119,6 +119,7 @@ for_window [class="Contrast"] floating enable
 for_window [class="Calculator"] floating enable
 for_window [class="Timer"] floating enable
 for_window [class="Palette"] floating enable
+for_window [class="doc_buddy"] floating enable
 no_focus [title="mpv pip"]
 
 bindsym --release Print exec import ~/screenshot.png

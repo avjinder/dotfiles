@@ -1,3 +1,4 @@
+
 set ideajoin
 set ideamarks
 set ideastrictmode
@@ -55,7 +56,7 @@ map ,tl <Action>(ActivateLogcatToolWindow)
 map ,tp <Action>(ActivateProblemsViewToolWindow)
 map ,tr <Action>(ActivateRunToolWindow)
 map ,tt <Action>(ActivateTerminalToolWindow)
-map ,te <Action>(ActivateAndroidEmulatorToolWindow)
+map ,te <Action>(ActivateRunningDevicesToolWindow)
 
 "map ,sb <Action>(ToggleLineBreakpoint)
 "map ,sn <Action>(StepOver)
@@ -148,5 +149,4 @@ Plug 'preservim/nerdtree'
 
 "map <leader>ed <Action>(ShowErrorDescription)
 "map <leader>i <Action>(QuickImplementations)
-
 
